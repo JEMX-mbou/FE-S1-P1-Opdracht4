@@ -176,9 +176,8 @@
         });
         
         let asideEl = document.querySelector('aside');
-        console.log(!asideEl.classList.contains('active'));
+        
         if (!asideEl.classList.contains('active')) {
-          console.log(height);
           asideEl.classList.add('active');
           asideEl.style.height = 'calc(1rem + '+height+'px';
         } else {
