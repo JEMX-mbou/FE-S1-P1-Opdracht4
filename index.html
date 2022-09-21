@@ -168,23 +168,24 @@
 
   <script>
     document.querySelector('aside h3').addEventListener('click', () => {
-      let height = 0;
-      
-      document.querySelectorAll('aside > *').forEach((el) => {
-        height = height + el.getBoundingClientRect().height;
-      });
-      
-      let asideEl = document.querySelector('aside');
-      console.log(!asideEl.classList.contains('active'));
-      if (!asideEl.classList.contains('active')) {
-        console.log(height);
-        asideEl.classList.add('active');
-        asideEl.style.height = 'calc(1rem + '+height+'px';
-      } else {
-        asideEl.classList.remove('active');
-        asideEl.style.height = '3.1rem';
+      if (window.innerWidth < 768) {
+        let height = 0;
+        
+        document.querySelectorAll('aside > *').forEach((el) => {
+          height = height + el.getBoundingClientRect().height;
+        });
+        
+        let asideEl = document.querySelector('aside');
+        console.log(!asideEl.classList.contains('active'));
+        if (!asideEl.classList.contains('active')) {
+          console.log(height);
+          asideEl.classList.add('active');
+          asideEl.style.height = 'calc(1rem + '+height+'px';
+        } else {
+          asideEl.classList.remove('active');
+          asideEl.style.height = '3.1rem';
+        }
       }
-
     });
   </script>
 </body>
